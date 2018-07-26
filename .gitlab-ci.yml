@@ -29,6 +29,7 @@ variables:
   - &KUBEAPPLY
     kubectl apply -f <(envsubst <etc/kube/service_template.yaml) &&
     kubectl apply -f <(envsubst <etc/kube/deployment_template.yaml) &&
+    kubectl apply -f <(envsubst <etc/kube/ingress_template.yaml) &&
     kubectl rollout status -f <(envsubst <etc/kube/deployment_template.yaml)
 
 build:
@@ -73,7 +74,7 @@ stop_review:
     action: stop
   script:
     - *KUBELOGIN
-    - kubectl delete service,deployment -l app=${CI_ENVIRONMENT_SLUG}
+    - kubectl delete service,deployment,ingress,secret -l app=${CI_ENVIRONMENT_SLUG}
 
 deploy_prod:
   stage: deploy
