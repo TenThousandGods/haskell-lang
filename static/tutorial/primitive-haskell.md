@@ -33,7 +33,7 @@ instance  Num Int  where
 Huh... well *that* looks somewhat magical. Now we need to understand both the
 `I#` constructor and the `+#` operator (and what's with the hashes all of a
 sudden?). If we [do a Hoogle
-search](http://www.stackage.org/snapshot/lts-1.0/hoogle?q=I%23), we can easily
+search](https://www.haskell.org/hoogle/?hoogle=I%23), we can easily
 [find the relevant
 docs](http://www.stackage.org/haddock/lts-1.0/ghc-prim-0.3.1.0/GHC-Types.html#t:Int),
 which leads us to the following definition:
@@ -45,7 +45,7 @@ data Int = I# Int#
 So our first lesson: the `Int` data type you've been using since you first
 started with Haskell isn't magical at all, it's defined just like any other
 algebraic data type... except for those hashes. We can also [search for
-`+#`](http://www.stackage.org/snapshot/lts-1.0/hoogle?q=%2B%23), and end up at
+`+#`](http://www.haskell.org/hoogle/hoogle?q=%2B%23), and end up at
 [some
 documentation](http://www.stackage.org/haddock/lts-1.0/ghc-prim-0.3.1.0/GHC-Prim.html#v:-43--35-)
 giving the type:
